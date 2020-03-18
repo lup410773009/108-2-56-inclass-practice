@@ -5,14 +5,14 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "741768442",
+    "hash" : "1731373245",
     "id" : "651FF373",
-    "lastKnownWriteTime" : 1584519793,
-    "last_content_update" : 1584519793235,
+    "lastKnownWriteTime" : 1584519894,
+    "last_content_update" : 1584519894663,
     "path" : "~/GitHub/108-2-56-inclass-practice/.gitignore",
     "project_path" : ".gitignore",
     "properties" : {
-        "cursorPosition" : "1,11",
+        "cursorPosition" : "1,12",
         "scrollLine" : "0"
     },
     "relative_order" : 2,
