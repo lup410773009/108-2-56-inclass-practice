@@ -63,7 +63,7 @@ my.108.total_credits <- 15
 `.108.total_credits` <- 15
 ```
 ```{r}
-'我的年紀'<- 20
-my_age<-'我的年紀'
+'myage'<- 20
+my_age<-'myage'
 ```
 
