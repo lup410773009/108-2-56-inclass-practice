@@ -1,22 +1,22 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1585117772795.000,
+    "created" : 1586190020521.000,
     "dirty" : false,
     "encoding" : "",
     "folds" : "",
     "hash" : "0",
-    "id" : "43C5B629",
-    "lastKnownWriteTime" : 2079833935168,
-    "last_content_update" : 1585117772795,
+    "id" : "7E2FE4C6",
+    "lastKnownWriteTime" : 2962983101392,
+    "last_content_update" : 1586190020521,
     "path" : null,
     "project_path" : null,
     "properties" : {
-        "id" : "827369369a62478abcff6c50a66fc0b2",
-        "name" : ".",
-        "title" : "."
+        "id" : "04e1ed815afe47bfb74521ba1206738b",
+        "name" : "course_listB",
+        "title" : "course_listB"
     },
-    "relative_order" : 4,
+    "relative_order" : 3,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "object_explorer"

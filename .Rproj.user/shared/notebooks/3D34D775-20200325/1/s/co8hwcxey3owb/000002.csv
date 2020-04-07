@@ -1,6 +1,5 @@
-"0","library(httr)"
-"2","package ．httr・ was built under R version 3.6.3"
-"0","library(dplyr)"
+"0","library(dplyr)
+"
 "2","package ．dplyr・ was built under R version 3.6.3"
 "2","Registered S3 method overwritten by 'dplyr':
   method           from
@@ -20,6 +19,3 @@ Attaching package: ．dplyr・
     intersect, setdiff, setequal, union
 
 "
-"0","GET(""https://api.github.com/repos/lup410773009/108-2-56-inclass-practice/commits"") %>%"
-"0","  content() %>%"
-"0","  View()"

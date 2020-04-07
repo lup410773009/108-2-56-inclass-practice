@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1586190018563.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "DB07F30C",
+    "lastKnownWriteTime" : 8026363914660965410,
+    "last_content_update" : 1586190018563,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "id" : "989aca6bb6e74b8e81d152425f6b4776",
+        "name" : "course_listA",
+        "title" : "course_listA"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "object_explorer"
+}

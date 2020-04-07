@@ -1,0 +1,7 @@
+"0","GET(""https://api.github.com/repos/lup410773009/108-2-56-inclass-practice/commits"") %>%
+  content() %>%
+  View()
+"
+"2","Error in GET(""https://api.github.com/repos/lup410773009/108-2-56-inclass-practice/commits"") %>%  : 
+  could not find function ""%>%""
+"

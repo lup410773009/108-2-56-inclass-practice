@@ -1,4 +1,8 @@
-"0","HeSaid <- ""他說:今天多了一個確診。"""
+"0","`小明交易1` <- list(
+"
+"2","Error: \uxxxx sequences not supported inside backticks (line 1)
+"
+"2","In addition: "
 "2","Warning message:
 "
 "2","In strsplit(code, ""\n"", fixed = TRUE) :"
