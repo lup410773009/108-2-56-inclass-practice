@@ -1,0 +1,5 @@
+"0","#用list儲存
+library(lubridate)
+"
+"2","Error in library(lubridate) : there is no package called ‘lubridate’
+"

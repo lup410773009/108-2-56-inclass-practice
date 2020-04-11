@@ -1,0 +1,19 @@
+"0","install.packages(c(""googlesheets4"",""tidyverse""))
+"
+"2","WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+"
+"2","Installing packages into ．C:/Users/Workplace/Documents/R/win-library/3.6・
+(as ．lib・ is unspecified)
+"
+"2","also installing the dependencies ．desc・, ．pkgbuild・, ．rprojroot・, ．pkgload・, ．praise・, ．colorspace・, ．ps・, ．plyr・, ．testthat・, ．farver・, ．labeling・, ．munsell・, ．RColorBrewer・, ．viridisLite・, ．prettyunits・, ．processx・, ．rematch・, ．fs・, ．withr・, ．uuid・, ．backports・, ．reshape2・, ．DBI・, ．gtable・, ．isoband・, ．scales・, ．clipr・, ．progress・, ．callr・, ．whisker・, ．selectr・, ．cellranger・, ．gargle・, ．googledrive・, ．rematch2・, ．broom・, ．dbplyr・, ．forcats・, ．ggplot2・, ．haven・, ．hms・, ．modelr・, ．readr・, ．readxl・, ．reprex・, ．rstudioapi・, ．rvest・, ．tidyr・, ．xml2・
+
+"
+"1","
+"
+"1",""
+"1","  There are binary versions available but the source versions are later"
+"1",""
+"1",":
+"
