@@ -41,7 +41,7 @@ library(lubridate); library(jsonlite); library(readr)
 "Error in library(lubridate) : there is no package called ‘lubridate’"
 
 ```{r ans21c}
-
+install.packages(c("lubridate"))
 ```
 
 ### 2.2
