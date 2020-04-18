@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1587204023907.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2279882389",
+    "id" : "533141F7",
+    "lastKnownWriteTime" : 1586787499,
+    "last_content_update" : 1587204184320,
+    "path" : "C:/Users/Workplace/Desktop/hw0407_410773009.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "25,53",
+        "last_setup_crc32" : "CBB1ECEC6e85358a",
+        "scrollLine" : "15"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

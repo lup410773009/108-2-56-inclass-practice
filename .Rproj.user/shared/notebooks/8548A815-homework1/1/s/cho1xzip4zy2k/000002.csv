@@ -1,7 +1,0 @@
-"0","taiwan_time <- ""西元2019年4月12日 12點55分30秒"""
-"2","Warning message:
-"
-"2","In parse(text = extractingCode) :"
-"2"," 在剖析器的第 1 列中有無效的多位元組字元
-"
-"0","oslo_time <- ""18.11.2018 15:33:02"""
