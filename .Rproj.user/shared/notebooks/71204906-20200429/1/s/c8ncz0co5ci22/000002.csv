@@ -1,5 +1,5 @@
-"0","example$name[pick_bloodB]
-"
+"0","pick_bloodB <- example$bloodType == ""B"""
+"0","example$name[pick_bloodB]"
 "1","[1]"
 "1"," ""小花"""
 "1"," ""小新"""
