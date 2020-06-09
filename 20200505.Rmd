@@ -154,18 +154,108 @@ str_count(headline, "謝無雙|官求敗")
 
 str_view_all(headline, "陳[^官]") # 固定字元＋有1個strip： 出象為排官的字元
 str_count(headline, "陳[^官]")
+str_extract_all(headline,"陳[^官]")
+```
+```{r}
+addresses <- c(
+  '臺中市后里區公館里尾社路385號',
+  '新竹市東區科學園路125號1樓'
+  )
 ```
 
+```{r}
+string1 <-string2 <- string3 <-"[0-9]"
+string4 <-"號"
+N<-paste0(string1,string2,string3,string4)
+a<-str_extract(addresses,N)
+b<-str_extract(addresses,"[0-9]{3}號")
+```
 
+```{r}
+addresses <- c(
+  '臺中市后里區公館里尾社路385號',
+  '新竹市東區科學園路125號1樓',
+  '新竹市北區竹光路99號',
+  '金門縣金城鎮賢庵里山前33號',
+  '臺中市南屯區工業區二十四路23號1樓')
+```
 
+```{r}
+str_view_all(addresses,"[0-9]+號")
+str_extract(addresses,"[0-9]+號")
+```
 
+```{r}
+phrase <- c("唧唧复唧唧")
+```
 
+```{r}
+targex <- "唧唧"
+pattern <-
+  glue::glue("^{targex}")
+pattern2 <-
+  glue::glue("{targex}$")
+str_view(phrase,pattern)
+str_view(phrase,pattern2)
+````
 
+```{r}
+twDate <-  c("民國108年12月5日","民國98年10月5日")
 
+library(stringr)
 
+#target_regex <- "[0-9]+"
+#A_regex <- "民國"
+#B_regex <- "年"
 
+#regex_pattern <- glue::glue(
+  "(?<={A_regex}){target_regex}(?={B_regex})"
+  )
+str(regex_pattern)
+print(regex_pattern)
 
+## 如果同學已經很熟就可以直接寫
+regex_pattern2 <-
+  "(?<=民國)[0-9]+(?=年)"
+str(regex_pattern2)
+# 取出民國年，計算西元年
+year <- 
+  str_extract(
+    twDate,
+    regex_pattern2)
+westernYear <- as.integer(year)+1911
 
+# 替換民國xx年的xx成西元年數字
+str_replace(
+  twDate,
+  regex_pattern,  # 要換掉的文字
+  as.character(westernYear) # 要替換的內容
+) -> twDate_reformat
+print(twDate_reformat)
+
+name1 <- "民國"
+name2 <- "西元"
+str_replace(
+  twDate_reformat,
+  name1,
+  name2
+) -> twDate_reformat
+print(twDate_reformat)
+lubridate::ymd(twDate_reformat)
+```
+
+```{r}
+
+bbb<-str_extract_all(
+  "我的名字8293叫17380小abce明",
+  "[\u4E00-\u9FFF]+")
+bbb
+bb <- bbb[1]
+as.character.POSIXt(bb) ->bb
+bb
+str_remove_all(bb,"[, ]")-> XiaoMINGName
+XiaoMINGName
+```
 
 
 

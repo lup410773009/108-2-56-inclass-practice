@@ -1,0 +1,19 @@
+---
+title: "Untitled"
+author: '410773009'
+date: "2020/6/9"
+output: html_document
+---
+```{r}
+demand <- 
+  function(p){
+    q_d <- 10-5*p
+    return(q_d)}
+```
+
+```{r}
+demand(1.2)
+```
+
+
+

@@ -1,0 +1,4 @@
+"0","map(dance,~lenth(.x$showInfo)) -> list_showInfo
+"
+"2","Error in lenth(.x$showInfo) : could not find function ""lenth""
+"

@@ -1,0 +1,4 @@
+"0","str_extract(""^唧唧"")
+"
+"2","Error in type(pattern) : argument ""pattern"" is missing, with no default
+"
