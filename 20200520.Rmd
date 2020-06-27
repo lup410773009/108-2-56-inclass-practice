@@ -4,77 +4,92 @@ author: '410773009'
 date: "2020/5/25"
 output: html_document
 ---
-```{r}
-install.packages("purrr")
-library(purrr)
-````
 
 ```{r}
-example <- list(
-  name=c("小明","小花","小新","美美"),
-  height=c(175,166,170,160),
-  weight=c(77,NA,60,43),
-  birthday=lubridate::ymd(c("1998-03-11","1999-12-22","1995-08-22","2001-10-10")),
-  hobby=c("美食 旅遊","旅遊 時尚","3C 美食","音樂 旅遊"),
-  residence=c("Taipei","New Taipei","Taichung","Kaohsiung"),
-  allowance=factor(c("0-1000","1001-2000","2000+","1001-2000")),
-  bloodType=c("A","B","B","O")
+library(magrittr)
+```
+
+
+
+```{r}
+threeHeights <- c(Gray = 178, John = 182, Cam = 175)
+```
+
+```{r}
+sort(threeHeights, decreasing = T) -> sort_heights
+names(sort_heights) -> sort_persons
+sort_persons[[1]]
+```
+
+```{r}
+threeHeights %>%
+  sort(.,decreasing = T) %>%
+  names(.) %>%
+  .[[1]]
+```
+
+```{r}
+cities <- factor(c("台北","花蓮","台東","台中"))
+levels(cities)
+```
+
+```{r}
+region <- cities
+library(stringr)
+levels(region) %>%
+  str_replace("台北","北部") %>%
+  str_replace("(花蓮|台東)","東部") %>%
+  str_replace("台中","中部") ->levels(region)
+levels(region)
+```
+
+```{r}
+num <- c(2,97,22,15,7)
+(num >50) %>%
+  num[.]
+#點必須位於funtion裡面
+```
+
+```{r}
+population <- c(`cityA`=500,`cityB`=1500,`cityC`=399)
+cities <- c("cityA","cityB","cityC","cityA","cityB")
+
+names(sort(population)) -> setlevels
+factor(cities,levels = setlevels) -> cities
+```
+
+```{r}
+population %>%
+  sort(.) %>%
+  names(.) %>%
+  factor(cities,levels =.) -> cities
+```
+
+```{r}
+population %>%
+  {names(sort(.))} %>%
+  factor(cities,levels =.) -> cities
+```
+
+```{r}
+dataList <- list(
+  num=c(2,97,22,15,7),
+  chr=c("2","97","22","15","7")
 )
 ```
 
 ```{r}
-pick_小新 <- example$name == "小新"
-data_selected <- 
-  list(
-    name=example$name[pick_小新],
-    height=example$height[pick_小新],
-    weight=example$weight[pick_小新],
-    birthday=example$birthday[pick_小新],
-    hobby=example$hobby[pick_小新],
-    residence=example$residence[pick_小新],
-    allowance=example$allowance[pick_小新],
-    bloodType=example$bloodType[pick_小新]
-  )
-map(example,~.x[pick_小新]) -> data_selected2
+library(purrr)
+map(dataList,is.numeric) ->result
+unlist(result) -> pick_numeric
+dataList[pick_numeric] -> num_element
+(num_element[[1]] > 50) -> pick_big
+num_element[[1]][pick_big] ->big_number
+
+unlist(num_element) ->num_element1
+num_element1 > 50 -> pick_big1
+num_element1[pick_big1] -> big_number1
 ```
 
 ```{r}
-jsonlite::fromJSON("https://www.dropbox.com/s/6252gbdnv9owljm/dance.json?dl=1", simplifyDataFrame = F) -> dance
 ```
-
-```{r}
-dance[[1]]$title
-map(dance,~.x$title) -> list_title
-```
-
-```{r}
-map(dance,~length(.x$showInfo)) -> list_showInfo
-```
-
-```{r}
-str(dance[[4]]$showInfo,max.level = 1)
-dance[[4]]$showInfo[[1]]$time
-dance[[4]]$showInfo[[2]]$time
-
-map(dance[[4]]$showInfo,~.x$time)->list_forth_time
-```
-
-```{r}
-num <- c(2,5,7)
-unlist(map(num,~.x+3)) -> num1
-c("a",)
-```
-
-
-
-
-
-
-
-
-
-
-
-
-`
-
