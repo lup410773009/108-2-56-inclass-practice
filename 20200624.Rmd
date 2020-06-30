@@ -1,0 +1,72 @@
+---
+title: "Untitled"
+author: '410773009'
+date: "2020/6/29"
+output: html_document
+---
+```{r}
+sampleData <- list(
+  list("男", 45), list("女", 32), list("男",50), list("男",33), list("女", 21)
+)
+```
+
+```{r}
+# 前三筆性別
+library(purrr)
+sampleData[[1]][[1]] %>% {.[[1]]}
+sampleData[[2]][[1]]
+sampleData[[3]][[1]]
+```
+
+```{r}
+map(sampleData,~{.x[[1]]})
+```
+
+```{r}
+map(1:5,~{sampleData[[.]][[1]]})
+```
+
+```{r}
+eggs <- rep("雞蛋x1",8)
+library(stringr)
+fryegg <- function(eggs){
+  str_replace(eggs,"雞蛋","荷包蛋")
+}
+```
+
+```{r}
+map(eggs,~fryegg(.x)) -> friedeggs1
+
+```
+
+```{r}
+map(1:8,~{fryegg(eggs[[.x]])}) ->friedeggs2
+```
+
+```{r}
+grade <- c(14,94,NA)
+i=1
+grade_i <- grade[[i]]
+
+pass_or_fail<- function(grade_i){
+  if(!is.na(grade_i)){
+  if(grade_i >= 60){
+    "pass"
+  } else{
+    "fail"
+  }
+} else {
+  "缺考"
+}
+}  
+pass_or_fail(grade[[1]])
+map(grade,~{pass_or_fail(.x)})
+map_chr(grade,~{pass_or_fail(.x)})
+map_pass_fail <- function(grade){
+  map_chr(grade,~{pass_or_fail(.x)})
+}
+map_pass_fail(c(1:100))
+```
+
+
+

@@ -1,0 +1,4 @@
+"0","num <- 1:length(examSubmissionTime$section)"
+"0","map_chr(num,"
+"0","        ~compute_howearly(examSubmissionTime$section[[.x]],"
+"0","                           examSubmissionTime$time[[.x]])) -> examSubmissionTime$howearly"

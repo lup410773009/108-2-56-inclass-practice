@@ -1,0 +1,61 @@
+---
+title: "Untitled"
+author: '410773009'
+date: "2020/6/30"
+output: html_document
+---
+```{r}
+library(stringr)
+readline(prompt = "請輸入你的學號:") -> studentID
+if(
+  str_detect(studentID,
+             "^[43](1[01][09]|9[0-9])[0-9]{5}$",negate = T)
+){
+  warning("你所輸入的學號不正確")
+}
+```
+
+```{r}
+if(!require(lubridate)){
+  install.packages("lubridate")
+}
+lubridate::ymd_hms("2020-07-01 13:00:00)
+```
+```{r}
+twDate <- 
+  c("民國108年12月5日","民國90年7月11日")
+convert_twDate<-function(twDate){
+  if(!require(stringr)){
+    install.packages("stringr")
+  }
+  if(!require(lubridate)){
+    install.packages("lubridate")
+  }
+  if(!require(glue)){
+    install.packages("glue")
+  }
+  
+  library(stringr)
+  regex_pattern <-
+    "(?<=民國)[0-9]+(?=年)"
+  year <-
+    str_extract(
+      twDate,
+      regex_pattern
+    )
+  westernYear <- as.integer(year) + 1911
+  library(glue)
+  
+  glue("西元",as.character(westernYear),
+       str_extract(twDate,
+                   "(?=年)[:graph:]+(日$)")) -> westernDate
+  library(lubridate)
+  return(ymd(westernDate))
+}
+convert_twDate("民國104年10月20日")
+```
+
+```{r}
+
+```
+

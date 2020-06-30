@@ -1,0 +1,95 @@
+---
+title: "Untitled"
+author: '410773009'
+date: "2020/5/25"
+output: html_document
+---
+
+```{r}
+library(magrittr)
+```
+
+
+
+```{r}
+threeHeights <- c(Gray = 178, John = 182, Cam = 175)
+```
+
+```{r}
+sort(threeHeights, decreasing = T) -> sort_heights
+names(sort_heights) -> sort_persons
+sort_persons[[1]]
+```
+
+```{r}
+threeHeights %>%
+  sort(.,decreasing = T) %>%
+  names(.) %>%
+  .[[1]]
+```
+
+```{r}
+cities <- factor(c("台北","花蓮","台東","台中"))
+levels(cities)
+```
+
+```{r}
+region <- cities
+library(stringr)
+levels(region) %>%
+  str_replace("台北","北部") %>%
+  str_replace("(花蓮|台東)","東部") %>%
+  str_replace("台中","中部") ->levels(region)
+levels(region)
+```
+
+```{r}
+num <- c(2,97,22,15,7)
+(num >50) %>%
+  num[.]
+#點必須位於funtion裡面
+```
+
+```{r}
+population <- c(`cityA`=500,`cityB`=1500,`cityC`=399)
+cities <- c("cityA","cityB","cityC","cityA","cityB")
+
+names(sort(population)) -> setlevels
+factor(cities,levels = setlevels) -> cities
+```
+
+```{r}
+population %>%
+  sort(.) %>%
+  names(.) %>%
+  factor(cities,levels =.) -> cities
+```
+
+```{r}
+population %>%
+  {names(sort(.))} %>%
+  factor(cities,levels =.) -> cities
+```
+
+```{r}
+dataList <- list(
+  num=c(2,97,22,15,7),
+  chr=c("2","97","22","15","7")
+)
+```
+
+```{r}
+library(purrr)
+map(dataList,is.numeric) ->result
+unlist(result) -> pick_numeric
+dataList[pick_numeric] -> num_element
+(num_element[[1]] > 50) -> pick_big
+num_element[[1]][pick_big] ->big_number
+
+unlist(num_element) ->num_element1
+num_element1 > 50 -> pick_big1
+num_element1[pick_big1] -> big_number1
+```
+
+```{r}
+```

@@ -1,0 +1,118 @@
+---
+title: "Untitled"
+author: '410773009'
+date: "2020/6/30"
+output: html_document
+---
+```{r}
+library(stringr)
+readline(prompt = "請輸入你的學號:") -> studentID
+if(
+  str_detect(studentID,
+             "^[43](1[01][09]|9[0-9])[0-9]{5}$",negate = T)
+){
+  warning("你所輸入的學號不正確")
+}
+```
+
+```{r}
+if(!require(lubridate)){
+  install.packages("lubridate")
+}
+lubridate::ymd_hms("2020-07-01 13:00:00)
+```
+
+```{r}
+convert_twDate<-function(twDate){
+  if(!require(stringr)){
+    install.packages("stringr")
+  }
+  if(!require(lubridate)){
+    install.packages("lubridate")
+  }
+  if(!require(glue)){
+    install.packages("glue")
+  }
+  
+  library(stringr)
+  regex_pattern <-
+    "(?<=民國)[0-9]+(?=年)"
+  year <-
+    str_extract(
+      twDate,
+      regex_pattern
+    )
+  westernYear <- as.integer(year) + 1911
+  str_extract(twDate,
+                   "(?=年)[:graph:]+(日$)") -> a
+  library(glue)
+  
+  glue("西元{westernYear}{a}") -> westernDate
+  library(lubridate)
+  return(ymd(westernDate))
+}
+convert_twDate("民國104年10月20日")
+```
+
+```{r}
+askSilly_weather <- function(locationInput,dateInput){
+  if(str_detect(locationInput,"台")){
+    str_replace(locationInput,"台","臺") -> locationInput
+  }
+  if(!require(SOAR)){
+      install.packages("SOAR")
+    }
+  if(!exists("weather_next36hours")){
+    jsonlite::fromJSON("https://opendata.cwb.gov.tw/fileapi/v1/opendataapi/F-C0032-001?Authorization=rdec-key-123-45678-011121314&format=JSON") ->
+    weather_next36hours
+  SOAR::Store(weather_next36hours) # 存在.R_cache environment中
+}
+  (weather_next36hours$cwbopendata$dataset$location$locationName == locationInput) -> pick_location
+  
+  weather_next36hours$cwbopendata$dataset$location$weatherElement[pick_location][[1]] -> weatherAtLocation
+  (weatherAtLocation$elementName=="MaxT") ->
+    pick_MaxT
+  (weatherAtLocation$elementName=="MinT") ->
+    pick_MinT
+  weatherAtLocation$time[pick_MaxT][[1]]$parameter$parameterName[[1]] -> maxT
+  weatherAtLocation$time[pick_MinT][[1]]$parameter$parameterName[[1]] -> minT
+  
+  glue::glue("{locationInput} {dateInput} 氣溫，最高{maxT}度，最低{minT}度。")
+}
+askSilly_weather("台北市",today())
+
+
+```
+
+```{r}
+exists("weather_next36hours")
+```
+
+```{r}
+jsonlite::fromJSON("https://www.dropbox.com/s/d14j5hp3i5ps657/examSubmissionTimes.json?dl=1") -> examSubmissionTime
+
+head(examSubmissionTime$section)
+head(examSubmissionTime$time)
+```
+
+```{r}
+compute_howearly <- function(a,b){
+  if(a == "56"){
+    deadline <- lubridate::ymd_hms("2020-05-27 15:00:00",tz = "Asia/Taipei")
+  }else{
+    deadline <- lubridate::ymd_hms("2020-05-27 17:00:00",tz = "Asia/Taipei")
+  }
+  howearly <- deadline - lubridate::ymd_hms(b,tz = "Asia/Taipei")
+  return(howearly)
+}
+num <- 1:length(examSubmissionTime$section)
+map_chr(num,
+        ~compute_howearly(examSubmissionTime$section[[.x]],
+                           examSubmissionTime$time[[.x]])) -> examSubmissionTime$howearly
+```
+
+
+```{r}
+
+```
+
